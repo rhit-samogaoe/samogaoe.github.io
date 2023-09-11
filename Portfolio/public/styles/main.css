@@ -1,0 +1,76 @@
+/* [NOTES] 
+em's are relative to the font size 
+rems are based on the root vs the parent font size*/
+
+body{
+    font-size: 18px; 
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    line-height: 1.0;
+}
+#about-me img {
+    height: 15em;
+}
+
+#portfolio img {
+    height: 10em;
+}
+
+p {
+    max-width: 50em;
+}
+
+body {
+    display: grid;
+    grid-template-areas: "head nav"
+                        "main main"
+                        "foot foot";
+    grid-template-columns: 2fr 4fr; /* the left colomn will be 20em wide and the right one will be the rest of the space availible */
+    grid-template-rows: auto auto 1fr auto; 
+}
+
+body > * {
+    padding-left: 4rem;
+}
+
+body > header {
+    grid-area: head;
+}
+
+body > nav {
+    grid-area: nav;
+}
+
+body > nav ul {
+    list-style: none;
+    padding: 0;
+
+}
+
+body > nav ul li {
+    display: inline;
+    padding: 1rem;
+
+}
+
+body > main {
+    grid-area: main;
+}
+
+body > footer { 
+    grid-area: foot;
+}
+
+header, footer {
+    padding-top: 1.33rem 0;
+    padding-bottom: 1.33rem 0;
+
+}
+
+header h1, footer h1{
+    margin: 0;
+}
+
+
