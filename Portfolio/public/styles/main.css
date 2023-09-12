@@ -1,22 +1,31 @@
 /* [NOTES] 
 em's are relative to the font size 
 rems are based on the root vs the parent font size*/
-
-body{
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Rajdhani&display=swap');
+:root{
+    --vertical-space : 2rem;
+    --horizontal-space: 3rem;
+}
+body {
     font-size: 18px; 
     line-height: 1.5;
+    font-family: 'Rajdhani', sans-serif;
 }
 
 h1, h2, h3 {
     line-height: 1.0;
+    font-family: 'Inconsolata', monospace;
 }
+/* p, ul, dl {
+    font-family: 'Rajdhani', sans-serif;
+} */
 #about-me img {
     height: 15em;
 }
 
-#portfolio img {
+/* body#portfolio img {
     height: 10em;
-}
+} */
 
 p {
     max-width: 50em;
@@ -24,15 +33,27 @@ p {
 
 body {
     display: grid;
-    grid-template-areas: "head nav"
+    grid-template-areas: "head head"
+                        "nav nav"
                         "main main"
                         "foot foot";
-    grid-template-columns: 2fr 4fr; /* the left colomn will be 20em wide and the right one will be the rest of the space availible */
+    grid-template-columns: 1fr 4fr; /* the left colomn will be 20em wide and the right one will be the rest of the space availible */
     grid-template-rows: auto auto 1fr auto; 
 }
 
-body > * {
-    padding-left: 4rem;
+@media screen and (min-width: 25em){
+    body{
+        grid-template-areas: "head head"
+                                "nav main"
+                                "foot foot"; 
+        grid-template-rows: auto auto 1fr auto;
+    }
+}
+
+ body > * { /*all descendants of the body */
+    padding-left: var(--horizontal-space);
+    padding-right: var(--horizontal-space);
+
 }
 
 body > header {
@@ -49,12 +70,6 @@ body > nav ul {
 
 }
 
-body > nav ul li {
-    display: inline;
-    padding: 1rem;
-
-}
-
 body > main {
     grid-area: main;
 }
@@ -64,13 +79,33 @@ body > footer {
 }
 
 header, footer {
-    padding-top: 1.33rem 0;
-    padding-bottom: 1.33rem 0;
+    padding-top: var(--vertical-space);
+    padding-bottom: var(--vertical-space);
 
 }
 
 header h1, footer h1{
-    margin: 0;
+    /* margin: 0; */
+    margin-top: 1em;
 }
 
+body#portfolio ul#portfolio-items {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+}
+
+@media screen and (min-width: 25em){
+    body#portfolio ul#portfolio-items li{
+        flex-basis: 48%;
+        padding-right: 2%;
+    }
+}
+
+
+body#portfolio ul#portfolio-items li img{
+    max-width: 100%;
+}
 
