@@ -43,6 +43,11 @@ a:hover {
     height: 15em;
 }
 
+.icon {
+    height: 2rem;
+    width: 2rem;
+}
+
 /* body#portfolio img {
     height: 10em;
 } */
@@ -51,52 +56,34 @@ p {
     max-width: 50em;
 }
 
+/*
 body {
     display: grid;
-    grid-template-areas: "head head"
-                        "nav nav"
-                        "main main"
-                        "foot foot";
-    grid-template-columns: 1fr 4fr; /* the left colomn will be 20em wide and the right one will be the rest of the space availible */
+    /* grid-template-areas: "head head" */
+                        /* "nav nav" */
+                        /* "main main" */
+                        /* "foot foot"; 
+    grid-template-columns: 1fr 4fr; the left colomn will be 20em wide and the right one will be the rest of the space availible 
     grid-template-rows: auto auto 1fr auto; 
 }
+*/
 
-@media screen and (min-width: 25em){
-    body{
-        grid-template-areas: "head head"
-                                "nav main"
-                                "foot foot"; 
-        grid-template-rows: auto auto 1fr auto;
-    }
-}
+/* @media screen and (min-width: 25em){ */
+    /* body{ */
+        /* grid-template-areas: "head head" */
+                                /* "nav main" */
+                                /* "foot foot";  */
+        /* grid-template-rows: auto auto 1fr auto; */
+    /* } */
+/* } */
 
  body > * { /*all descendants of the body */
     padding-left: var(--horizontal-space);
     padding-right: var(--horizontal-space);
 
 }
+/*
 
-body > header {
-    grid-area: head;
-}
-
-body > nav {
-    grid-area: nav;
-}
-
-body > nav ul {
-    list-style: none;
-    padding: 0;
-
-}
-
-body > main {
-    grid-area: main;
-}
-
-body > footer { 
-    grid-area: foot;
-}
 
 header, footer {
     padding-top: var(--vertical-space);
@@ -106,8 +93,8 @@ header, footer {
 
 header h1, footer h1{
     /* margin: 0; */
-    margin-top: 1em;
-}
+    /* margin-top: 1em; */
+/* } */
 
 body#portfolio ul#portfolio-items {
     display: flex;
@@ -117,13 +104,31 @@ body#portfolio ul#portfolio-items {
     padding: 0;
 }
 
-@media screen and (min-width: 25em){
+footer {
+    text-align: center;
+}
+
+#headshot {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+#navigation li {
+
+    list-style: none;
+    display: inline-flex;
+    text-align: center;
+    justify-content: space-around;
+  }
+
+
+  @media screen and (min-width: 25em){
     body#portfolio ul#portfolio-items li{
         flex-basis: 48%;
         padding-right: 2%;
     }
-}
-
+    }
 
 body#portfolio ul#portfolio-items li img{
     max-width: 100%;
